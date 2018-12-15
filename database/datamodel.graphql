@@ -1,21 +1,43 @@
-
 type WineTaster {
   id: ID! @unique
   name: String! @unique
   nationality: String
+  gender: Gender
+  age: Int
+  # Could be expanded with more consumer profile fields: https://www.thebalancesmb.com/consumer-profile-defining-the-ideal-customer-2296932
   favouriteWine: Wine
+  reviews: [Review]
 }
 
 type Wine {
   id: ID! @unique
-  name: String
-  grapes: [WineGrapes] # Could be enum
+  name: String!
+  grapes: [WineGrapes]
+  winery: Winery
+  year: Int
+  alcohol: Float
+  price: Float
+}
+
+type Winery {
+  id: ID! @unique
+  name: String! @unqiue
+  location: String
 }
 
 type Review {
   id: ID! @unique
   wine: Wine!
   wineTaster: WineTaster!
+  tastingSession: TastingSession!
+}
+
+type TastingSession {
+  id: ID! @unique
+  date: DateTime!
+  wines: [Wine!]!
+  wineTasters: [WineTaster!]!
+  reviews: [Review!]!
 }
 
 enum WineGrapes {
@@ -27,4 +49,9 @@ enum WineGrapes {
   MERLOT
   CABERNET_SAUVIGNON
   PINOT_NOIR
+}
+
+enum Gender {
+  MALE
+  FEMALE
 }
