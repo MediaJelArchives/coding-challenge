@@ -4,25 +4,21 @@ type WineTaster {
   nationality: String
   gender: Gender
   age: Int
-  # Could be expanded with more consumer profile fields: https://www.thebalancesmb.com/consumer-profile-defining-the-ideal-customer-2296932
   favouriteWine: Wine
-  reviews: [Review]
+  reviews: [Review!]!
+  # Could be expanded with more consumer profile fields:
+  # https://www.thebalancesmb.com/consumer-profile-defining-the-ideal-customer-2296932
 }
 
 type Wine {
   id: ID! @unique
   name: String!
   grapes: [WineGrapes]
-  winery: Winery
+  winery: String
   year: Int
   alcohol: Float
   price: Float
-}
-
-type Winery {
-  id: ID! @unique
-  name: String! @unqiue
-  location: String
+  # image url
 }
 
 type Review {
@@ -30,14 +26,18 @@ type Review {
   wine: Wine!
   wineTaster: WineTaster!
   tastingSession: TastingSession!
+  score: Int
+  tastingNotes: [TastingNotes]
+  # more fields could be added having to do with the review:
+  # predicted price? suggested pairing? predicted year?
 }
 
 type TastingSession {
   id: ID! @unique
-  date: DateTime!
   wines: [Wine!]!
   wineTasters: [WineTaster!]!
   reviews: [Review!]!
+  #   date: DateTime! could be added
 }
 
 enum WineGrapes {
@@ -54,4 +54,16 @@ enum WineGrapes {
 enum Gender {
   MALE
   FEMALE
+}
+
+enum TastingNotes {
+  ACIDIC
+  BARNYARD
+  BRIGHT
+  BUTTERY
+  COMPLEX
+  CRISP
+  EARTHY
+  OAKED
+  JUICY
 }

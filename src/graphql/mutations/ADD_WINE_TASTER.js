@@ -1,15 +1,21 @@
 import gql from "graphql-tag";
 const ADD_WINE_TASTER = gql`
   mutation addWineTaster(
+    $id: ID
     $name: String!
     $nationality: String
+    $gender: Gender
+    $age: Int
     $favouriteWine: ID
   ) {
-    addMessage(
+    addWineTaster(
       wineTaster: {
-        name: $name,
-        nationality: $nationality,
-        favouriteWine: $ID
+        id: $id
+        name: $name
+        nationality: $nationality
+        gender: $gender
+        age: $age
+        favouriteWine: $favouriteWine
       }
     ) @client
   }
