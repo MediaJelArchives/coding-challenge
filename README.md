@@ -8,11 +8,11 @@ Imagine that you have been brought on to the intitial team that is tasked with e
 
 The datamodel can be found at `./database/datamodel.graphql`. By the end of the challenge, this data model should be expanded and the neccessary changes reflected in the Form component. The other goal of this challenge will be to create the view where users can see a list of their existing tasting sessions. This view will be used so that a user can go back into a session to update it or delete the session entirely. Some possible ideas are, but in no way limited to:
 
-[ ] Update and Delete functionality
-[ ] Review expanded with fields such as: predicted price, suggested pairing, or predicted year
-[ ] WineTaster expanded to include other user profile fields
-[ ] Wines have an attached image (a placeholder image is found in `./src/assets`)
-[ ] TastingSessions have a date
+- [ ] Update and Delete functionality
+- [ ] Review expanded with fields such as: predicted price, suggested pairing, or predicted year
+- [ ] WineTaster expanded to include other user profile fields
+- [ ] Wines have an attached image (a placeholder image is found in `./src/assets`)
+- [ ] TastingSessions have a date
 
 The front-end should be built in such a way that tasting session data can be inserted into the database by a user. This may mean that new tasters or wines need to be created. Some drop-downs should be used to facilitate interaction with the form. Modularity and functionality is emphasized here, rather than visual appeal (basic HTML styling should be fine). Boilerplate is provided, that demonstrates how to connect to the Prisma instance from the client using React Apollo. The existing code should not be considered complete or a good representation of the final solution. Creativity is encouraged. 
 
