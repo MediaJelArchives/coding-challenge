@@ -3,8 +3,8 @@ import { Mutation } from "react-apollo";
 
 import ListWines from "./ListWines";
 
-import WINE_TASTERS from "../graphql/queries/WINE_TASTERS";
-import CREATE_WINE_TASTER from "../graphql/mutations/CREATE_WINE_TASTER";
+import WINE_TASTERS from "../../../graphql/queries/WINE_TASTERS";
+import CREATE_WINE_TASTER from "../../../graphql/mutations/CREATE_WINE_TASTER";
 
 class CreateWineTaster extends Component {
   state = {

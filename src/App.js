@@ -3,7 +3,7 @@ import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./components/TastingSession/Home";
 
 import resolvers from "./graphql/resolvers";
 import initialState from "./graphql/initialState";

@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, compose, Query } from "react-apollo";
 
-import WINE_TASTERS from "../graphql/queries/WINE_TASTERS";
-import ADD_WINE_TASTER from "../graphql/mutations/ADD_WINE_TASTER";
+import WINE_TASTERS from "../../../graphql/queries/WINE_TASTERS";
+import ADD_WINE_TASTER from "../../../graphql/mutations/ADD_WINE_TASTER";
 
 const ListWineTasters = props => {
   return (

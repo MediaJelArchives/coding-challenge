@@ -6,8 +6,6 @@ type WineTaster {
   age: Int
   favouriteWine: Wine
   reviews: [Review!]!
-  # Could be expanded with more consumer profile fields:
-  # https://www.thebalancesmb.com/consumer-profile-defining-the-ideal-customer-2296932
 }
 
 type Wine {
@@ -18,7 +16,6 @@ type Wine {
   year: Int
   alcohol: Float
   price: Float
-  # image url
 }
 
 type Review {
@@ -28,8 +25,6 @@ type Review {
   tastingSession: TastingSession!
   score: Int
   tastingNotes: [TastingNotes]
-  # more fields could be added having to do with the review:
-  # predicted price? suggested pairing? predicted year?
 }
 
 type TastingSession {
@@ -37,7 +32,6 @@ type TastingSession {
   wines: [Wine!]!
   wineTasters: [WineTaster!]!
   reviews: [Review!]!
-  #   date: DateTime! could be added
 }
 
 enum WineGrapes {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 
-import CREATE_REVIEW from "../graphql/mutations/CREATE_REVIEW";
+import CREATE_REVIEW from "../../../graphql/mutations/CREATE_REVIEW";
 
 class CreateReview extends Component {
   state = {

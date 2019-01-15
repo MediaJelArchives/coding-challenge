@@ -1,15 +1,24 @@
 # MediaJel Engineering Coding Challenge
 
 ## Context
-Image a situation where we would like have a form that allows us to create tagged data elements. Image further that these tagged elements have some sort of grouping or necessary ordering. The purpose of this coding challenge is to demonstrate ability in both structuring a data model and building front-end components.
 
-Given a situation where a group of well-known wine tasters and their experience regarding a specific wine are tagged. How can we store this data in our database in a way where we can devise interesting inferences. 
+Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track their tasting sessions, and discover new wine.
 
-Some initial code, which demonstates how the datamodel is developed, can be found at `./database/datamodel.graphql`. By the end of the challenge, there should be a GraphQL type depicting a tasting session, which may have several tasters, wines, and reviews. The Review type should have some interesting tags that we could perhaps use to draw correlations. 
+Imagine that you have been brought on to the intitial team that is tasked with expanding out the wine tasting session functionality. A group of users and their experience regarding a specific wine will be tagged using the Form component seen in `./src/components/Form`. This tasting session data will eventually be used to suggest new products to the user. The purpose of this coding challenge is to demonstrate ability in both working with GraphQL and building front-end components.
 
-The front-end should be built in such a way that tasting session data can be inserted into the database by a user. This may mean that new tasters or wines need to be created. Some drop-downs should be used to facilitate interaction with the form. Modularity and functionality is emphasized here, rather than visual appeal (basic HTML styling should be fine). Boilerplate is provided, that demonstrates how to connect to the Prisma instance from the client using React Apollo. The existing code should not be considered complete or a good representation of the final solution. It exists purely to demonstrate the ncessary React/Apollo/GraphQL functionality.
+The datamodel can be found at `./database/datamodel.graphql`. By the end of the challenge, this data model should be expanded and the neccessary changes reflected in the Form component. The other goal of this challenge will be to create the view where users can see a list of their existing tasting sessions. This view will be used so that a user can go back into a session to update it or delete the session entirely. Some possible ideas are, but in no way limited to:
 
-## Technologies
+[ ] Update and Delete functionality
+[ ] Review expanded with fields such as: predicted price, suggested pairing, or predicted year
+[ ] WineTaster expanded to include other user profile fields
+[ ] Wines have an attached image (a placeholder image is found in `./src/assets`)
+[ ] TastingSessions have a date
+
+The front-end should be built in such a way that tasting session data can be inserted into the database by a user. This may mean that new tasters or wines need to be created. Some drop-downs should be used to facilitate interaction with the form. Modularity and functionality is emphasized here, rather than visual appeal (basic HTML styling should be fine). Boilerplate is provided, that demonstrates how to connect to the Prisma instance from the client using React Apollo. The existing code should not be considered complete or a good representation of the final solution. Creativity is encouraged. 
+
+A secondary objective after these are complete could be to implement a popular UI framework such as Material UI, Semantic, or ANT.
+
+## Setup
 There is some code provided that will allow you to get started quickly, without worrying too much about setup. There are, however, a few dependencies that you might have to install on your system.
 
 ### Installing Yarn (OSX)
@@ -90,4 +99,8 @@ prisma deploy
 ```sh
 yarn start
 ```
+
+## GraphQL Playground
+
+Prisma comes with a [built in IDE](https://github.com/prisma/graphql-playground) for viewing your data. It can be viewed in your browser after your local backend is running. 
 

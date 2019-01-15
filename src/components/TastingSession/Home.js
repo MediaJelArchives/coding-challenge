@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 
-import CreateTastingSession from "./CreateTastingSession";
+import CreateTastingSession from "./Form/CreateTastingSession";
 
-import CREATE_TASTING_SESSION from "../graphql/mutations/CREATE_TASTING_SESSION";
-import LOCAL_TASTING_SESSION from "../graphql/queries/LOCAL_TASTING_SESSION";
+import CREATE_TASTING_SESSION from "../../graphql/mutations/CREATE_TASTING_SESSION";
+import LOCAL_TASTING_SESSION from "../../graphql/queries/LOCAL_TASTING_SESSION";
 
 class Home extends Component {
   state = {

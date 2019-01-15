@@ -7,9 +7,9 @@ import CreateWineTaster from "./CreateWineTaster";
 import CreateWine from "./CreateWine";
 import CreateReview from "./CreateReview";
 
-import UPDATE_TASTING_SESSION from "../graphql/mutations/UPDATE_TASTING_SESSION";
-import LOCAL_STATE from "../graphql/queries/LOCAL_TASTING_SESSION";
-import initialState from "../graphql/initialState";
+import UPDATE_TASTING_SESSION from "../../../graphql/mutations/UPDATE_TASTING_SESSION";
+import LOCAL_STATE from "../../../graphql/queries/LOCAL_TASTING_SESSION";
+import initialState from "../../../graphql/initialState";
 
 const CreateTastingSession = props => {
   return (

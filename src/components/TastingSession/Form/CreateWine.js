@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 
-import CREATE_WINE from "../graphql/mutations/CREATE_WINE";
-import WINES from "../graphql/queries/WINES";
+import CREATE_WINE from "../../../graphql/mutations/CREATE_WINE";
+import WINES from "../../../graphql/queries/WINES";
 
 class CreateWine extends Component {
   state = {
