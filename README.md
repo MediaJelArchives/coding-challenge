@@ -2,7 +2,20 @@
 
 ## Context
 
-Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track their tasting sessions, and discover new wine.
+Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track their tasting sessions, and discover new wine. This tool is used to test potential candidates for our engineering team.
+
+## Back End Challenge
+
+At the time this test is written, the datamodel associated with this application is partially developed. However, a wine app without wines in the database is not much of a wine app! This challenge will focus on backend development with regards to efficient data processing and modeling. There is also the opportunity to show some flair by using interesting datastore solutions to solve the problem at hand. Before reading the rest of the challenge, it may be benefitial to jump to the "Setup" section to begin getting familiar with the development environment.
+
+Now, for the actual challenge. Assume there's exists a service that can callback in the form of a webhook when new data becomes available. These webhooks will callback with an image of a wine bottle/label. As such, we must gather data from the image to add new content to the database. For the purposes of this challenge, the candidate can use whatever pictures they choose. We recommend picture from the [LCBO](http://www.lcbo.com/content/lcbo/en.html#.XEpE6M9KjUY) website. In any case, tests can be written with mock images to verify the correctness of the solution. 
+
+Before continuing, consider the following items.
+- The current datamodel can be found at `./database/datamodel.graphql`. Although it has some structure, the wine type is still lacking. It does not have an image associate with it and may lack some of the features that could be available directly on a wine bottle or label.
+- The rate at which callbacks will come in can be assumed to be small, but ideas/implementations regarding how to handle larger volume goes a long way. 
+- It's not required that the containers used for this solution be unchanged. In fact, at the time of writing this, it is necessary to add a server-side component. The `docker-compose.yml` file can be modified to add any new service that could help you.
+
+## Front End Challenge
 
 Imagine that you have been brought on to the intitial team that is tasked with expanding out the wine tasting session functionality. A group of users and their experience regarding a specific wine will be tagged using the Form component seen in `./src/components/Form`. This tasting session data will eventually be used to suggest new products to the user. The purpose of this coding challenge is to demonstrate ability in both working with GraphQL and building front-end components.
 
