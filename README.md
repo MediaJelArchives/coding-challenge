@@ -2,11 +2,28 @@
 
 ## Context
 
-Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track their tasting sessions, and discover new wine.
+Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track their tasting sessions, and discover new wine. This tool is used to test potential candidates for our engineering team.
 
-Imagine that you have been brought on to the intitial team that is tasked with expanding out the wine tasting session functionality. A group of users and their experience regarding a specific wine will be tagged using the Form component seen in `./src/components/Form`. This tasting session data will eventually be used to suggest new products to the user. The purpose of this coding challenge is to demonstrate ability in both working with GraphQL and building front-end components.
+## Back End Challenge
 
-The datamodel can be found at `./database/datamodel.graphql`. By the end of the challenge, this data model should be expanded and the neccessary changes reflected in the Form component. The other goal of this challenge will be to create the view where users can see a list of their existing tasting sessions. This view will be used so that a user can go back into a session to update it or delete the session entirely. Some possible ideas are, but in no way limited to:
+At the time this test is written, the datamodel associated with this application is partially developed. However, a wine app without wines in the database is not much of a wine app! This challenge will focus on backend development with regards to efficient data processing and modeling. There is also the opportunity to show some flair by using interesting datastore solutions to solve the problem at hand. Before reading the rest of the challenge, it may be benefitial to jump to the "Setup" section to begin getting familiar with the development environment.
+
+Now, for the actual challenge. Assume there's exists a service that can callback in the form of a webhook when new data becomes available. These webhooks will callback with an image of a wine bottle/label. As such, we must gather data from the image to add new content to the database. For the purposes of this challenge, the candidate can use whatever images they choose. We recommend those from the [LCBO](http://www.lcbo.com/content/lcbo/en.html#.XEpE6M9KjUY) website. In any case, tests can be written with mock images to verify the correctness of the solution. 
+
+Before continuing, consider the following items.
+- The current datamodel can be found at `./database/datamodel.graphql`. Although it has some structure, the wine type is still lacking. It does not have an image associate with it and may lack some of the features that could be available directly on a wine bottle or label.
+- The rate at which callbacks will come in can be assumed to be small, but ideas/implementations regarding how to handle larger volume goes a long way. 
+- It's not required that the containers used for this solution be unchanged. In fact, at the time of writing this, it is necessary to add a server-side component. The `docker-compose.yml` file can be modified to add any new service that could help you.
+
+## Front End Challenge
+
+Imagine that you have been brought on to the intitial team that is tasked with expanding out the wine tasting session functionality. A group of users and their experience regarding a specific wine will be tagged using the Form component seen in `./src/components/TastingSession/Form`. The `./src/components/TastingSession/Home` component contains a button that creates a new tasting session and opens the form component. This tasting session data will eventually be used to suggest new products to the user. The purpose of this coding challenge is to demonstrate ability in both working with GraphQL and building front-end components.
+
+## Objectives
+
+The datamodel can be found at `./database/datamodel.graphql`. By the end of the challenge, this data model should be expanded and the neccessary changes reflected in the Form component. The other goal of this challenge will be to create the view and functionality where a user can see a list of their existing tasting sessions to go back into a session to update it or delete the session entirely.
+
+Some goals could look like the following, but not limited to:
 
 - [ ] Update and Delete functionality
 - [ ] Review expanded with fields such as: predicted price, suggested pairing, or predicted year
@@ -14,11 +31,11 @@ The datamodel can be found at `./database/datamodel.graphql`. By the end of the 
 - [ ] Wines have an attached image (a placeholder image is found in `./src/assets`)
 - [ ] TastingSessions have a date
 
-The front-end should be built in such a way that tasting session data can be inserted into the database by a user. This may mean that new tasters or wines need to be created. Some drop-downs should be used to facilitate interaction with the form. Modularity and functionality is emphasized here, rather than visual appeal (basic HTML styling should be fine). Boilerplate is provided, that demonstrates how to connect to the Prisma instance from the client using React Apollo. The existing code should not be considered complete or a good representation of the final solution. Creativity is encouraged. 
+Modularity and functionality is emphasized here, rather than visual appeal (basic HTML styling should be fine). Boilerplate is provided, that demonstrates how to connect to the Prisma instance from the client using React Apollo. The existing code should not be considered complete or a good representation of the final solution. Creativity is encouraged. 
 
-A secondary objective after these are complete could be to implement a popular UI framework such as Material UI, Semantic, or ANT.
+A secondary objective could be to implement a popular UI framework such as Material, Semantic, or ANT, but update and delete functionality is the priority.
 
-## Setup
+## Technologies
 There is some code provided that will allow you to get started quickly, without worrying too much about setup. There are, however, a few dependencies that you might have to install on your system.
 
 ### Installing Yarn (OSX)
@@ -91,16 +108,29 @@ Once all your dependencies are installed, you can begin deploying your backend, 
 ```sh
 docker-compose up -d
 ```
-- We can deploy the datamodel (found at `./database/datamodel.graphql`) using the following command. You will need to make changes to this file to develop an adequate datamodel.
+- We can deploy the datamodel (found at `./database/datamodel.graphql`) using the following command. Follow the prompt to set up a local server using Docker.
 ```sh
 prisma deploy
 ```
 - The front-end can be started by simply running
 ```sh
-yarn start
+yarn && yarn start
 ```
 
 ## GraphQL Playground
 
-Prisma comes with a [built in IDE](https://github.com/prisma/graphql-playground) for viewing your data. It can be viewed in your browser after your local backend is running. 
+Prisma comes with a [built in IDE](https://github.com/prisma/graphql-playground) for viewing your data and schema. It can be viewed in your browser on the Docker endpoint, such as `http://localhost:4466`.
+
+## Code of Conduct
+
+All work is to be done on feature branches off of the "develop" branch. Feature branches should be named with your lowercase full name without spaces such as `justinkaseman`.
+
+For Example:
+
+git branch <initials-feature>
+git checkout <initials-feature>
+
+After completion, push to your feature branch and submit a pull request by filling out the PR template.
+
+Happy Coding!
 
