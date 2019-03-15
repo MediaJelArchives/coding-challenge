@@ -18,6 +18,13 @@ type Wine {
   price: Float
 }
 
+type Media {
+  id: ID! @unique
+  type: MediaTypes!
+  path: String
+  wine: Wine!
+}
+
 type Review {
   id: ID! @unique
   wine: Wine!
@@ -60,4 +67,9 @@ enum TastingNotes {
   EARTHY
   OAKED
   JUICY
+}
+
+enum MediaTypes {
+  IMAGE
+  VIDEO
 }
