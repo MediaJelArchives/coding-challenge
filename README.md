@@ -1,5 +1,7 @@
 # MediaJel Engineering Coding Challenge
 
+<img src="https://d1ww29wzvuczsv.cloudfront.net/i?&e=pv&page=MediajelCodingChallenge&url=https%3A%2F%2Fgithub.com%2FMediaJel%2FCodingChallenge&aid=mj-code-test&p=web&tv=no-js-0.1.0" />
+
 ## Context
 
 Welcome to Carpe Vinum -  the open source tool for wine lovers to connect, track their tasting sessions, and discover new wine. This tool is used to test potential candidates for our engineering team.
