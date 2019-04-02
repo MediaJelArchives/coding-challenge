@@ -9,6 +9,9 @@ const WINES = gql`
       year
       alcohol
       price
+      size
+      color
+      image    
     }
   }
 `;

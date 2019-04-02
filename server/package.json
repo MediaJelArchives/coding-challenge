@@ -1,0 +1,24 @@
+{
+  "name": "serverchallenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Taboada",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-fetch": "^0.7.0",
+    "apollo-server-express": "^2.4.8",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "multer": "^1.4.1",
+    "node-tesseract": "^0.2.7",
+    "node-tesseract-ocr": "^0.1.0",
+    "tesseract.js": "^1.0.14"
+  }
+}

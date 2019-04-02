@@ -1,7 +1,8 @@
 {
-  "name": "coding_challenge",
+  "name": "challenge",
   "version": "0.1.0",
   "private": true,
+  "author": "Nicolas Taboada",
   "dependencies": {
     "apollo-boost": "^0.1.22",
     "graphql": "^14.0.2",
@@ -24,5 +25,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-router-dom": "^4.3.1",
+    "sweetalert2": "^8.2.6"
+  }
 }

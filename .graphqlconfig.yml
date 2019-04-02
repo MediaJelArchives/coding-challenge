@@ -2,4 +2,6 @@ projects:
   database:
     schemaPath: src/generated/prisma.graphql
     extensions:
+      endpoints: 
+        dev: "http://10.14.10.94:4466/"
       prisma: database/prisma.yml
