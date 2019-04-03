@@ -1,6 +1,6 @@
-var express = require('express')
-var multer  = require('multer')
-var Tesseract = require('tesseract.js')
+const express = require('express')
+const multer  = require('multer')
+const Tesseract = require('tesseract.js')
 const { createApolloFetch } = require('apollo-fetch');
 
 const fetch = createApolloFetch({
@@ -20,9 +20,9 @@ const storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage })
+const upload = multer({ storage: storage })
 const bodyParser = require('body-parser');
-var app = express();
+const app = express();
 
 app.use(bodyParser.json())
 
