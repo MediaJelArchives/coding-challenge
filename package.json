@@ -9,7 +9,8 @@
     "react": "^16.6.3",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-router-dom": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,7 +28,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-router-dom": "^4.3.1",
     "sweetalert2": "^8.2.6"
   }
 }
