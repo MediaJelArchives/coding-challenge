@@ -17,6 +17,7 @@ Before continuing, consider the following items.
 - The current datamodel can be found at `./database/datamodel.graphql`. Although it has some structure, the wine type is still lacking. It does not have an image associate with it and may lack some of the features that could be available directly on a wine bottle or label.
 - The rate at which callbacks will come in can be assumed to be small, but ideas/implementations regarding how to handle larger volume goes a long way.
 - It's not required that the containers used for this solution be unchanged. In fact, at the time of writing this, it is necessary to add a server-side component. The `docker-compose.yml` file can be modified to add any new service that could help you.
+- Inside the `./server/index.js`file you will find a small express API. The original idea was to store all images on an separate service and acceed them through REST to our front-end application. Consider working on that using any external service that may works for you.
 
 ## Front End Challenge
 
@@ -28,7 +29,7 @@ The datamodel can be found at `./database/datamodel.graphql`. By the end of the 
 
 Some goals could look like the following, but not limited to:
 
-- [ ] CRUD functionality for WineTasters
+- [ ] CRUD functionality for WineTasters. Also, expand the WineTasters page showing the whole list just like the Wines page.
 - [ ] Include a small Login Component to start supporting Users in the app.
 - [ ] Review expanded with fields such as: predicted price, suggested pairing, or predicted year
 - [ ] Include another section in the app to search reviews and filter them based on different parameters (such as best/worst rated, date, price).
