@@ -111,10 +111,10 @@ It's important to make sure that docker-compose is also installed, as it will be
 
 ## Configuration
 
-Make sure to modify these files with your the actual IP:
+Make sure to modify these files with your actual IP:
 
 ```
-/graphqlconfig.yml
+/graphqlconfig.yml:
 
 projects:
   database:
@@ -126,13 +126,13 @@ projects:
 ```
 
 ```
-/database/prisma.yml
+/database/prisma.yml:
  
 endpoint: http://{YOUR_IP}:4466
 ```
 
 ```
-/server/index.js
+/server/index.js:
 
 const fetch = createApolloFetch({
   uri: 'http:/{YOUR_IP}:4466',
@@ -141,7 +141,7 @@ const fetch = createApolloFetch({
 ```
 
 ```
-/src/components/App
+/src/components/App:
 
 const client = new ApolloClient({
   uri: "http://{YOUR_IP}:4466",
