@@ -28,11 +28,12 @@ The datamodel can be found at `./database/datamodel.graphql`. By the end of the 
 
 Some goals could look like the following, but not limited to:
 
-- [ ] Update and Delete functionality
+- [ ] CRUD functionality for WineTasters
+- [ ] Include a small Login Component to start supporting Users in the app.
 - [ ] Review expanded with fields such as: predicted price, suggested pairing, or predicted year
-- [ ] WineTaster expanded to include other user profile fields
-- [ ] Wines have an attached image (a placeholder image is found in `./src/assets`)
-- [ ] TastingSessions have a date
+- [ ] Include another section in the app to search reviews and filter them based on different parameters (such as best/worst rated, date, price).
+- [ ] Support the ability to use enviroment variables. Both in the Front and Back of the app.
+
 
 Modularity and functionality is emphasized here, rather than visual appeal (basic HTML styling should be fine). Boilerplate is provided, that demonstrates how to connect to the Prisma instance from the client using React Apollo. The existing code should not be considered complete or a good representation of the final solution. Creativity is encouraged.
 
@@ -111,7 +112,7 @@ It's important to make sure that docker-compose is also installed, as it will be
 
 ## Configuration
 
-Make sure to modify these files with your actual IP:
+Make sure to modify these files with your actual IP
 
 ```
 /graphqlconfig.yml:
