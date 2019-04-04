@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-
-import CREATE_REVIEW from "../../../graphql/mutations/CREATE_REVIEW";
+import CREATE_REVIEW from "../../graphql/mutations/CREATE_REVIEW";
 
 class CreateReview extends Component {
   state = {
+    yearPredict: undefined,
+    pricePredict: undefined,
     score: undefined,
     tastingNotes: [],
   };
@@ -12,9 +13,7 @@ class CreateReview extends Component {
   inputHandler = e => {
     let { name, value } = e.target;
     if (name === "tastingNotes") {
-      this.setState({
-        tastingNotes: [...e.target.selectedOptions].map(o => o.value),
-      });
+      this.setState({ tastingNotes: [...e.target.selectedOptions].map(o => o.value) });
     } else {
       if (name === "score") value = Number(value);
       this.setState({ [name]: value });
@@ -22,20 +21,36 @@ class CreateReview extends Component {
   };
 
   render() {
-    const { score, tastingNotes } = this.state;
+    const { score, tastingNotes ,pricePredict, yearPredict } = this.state;
     const { wineTaster, wine, tastingSession } = this.props;
     return (
       <div>
         <div>
-          <h5>{this.props.wine}</h5>
-          <input
+          <input class="form-control"
             name="score"
             value={score}
             onChange={this.inputHandler}
             type="number"
             placeholder="Score: 0 - 100"
           />
-          <select
+          <br />
+          <input class="form-control"
+            name="pricePredict"
+            value={pricePredict}
+            onChange={this.inputHandler}
+            type="text"
+            placeholder="? USD"
+          />
+          <br />
+          <input class="form-control"
+            name="yearPredict"
+            value={yearPredict}
+            onChange={this.inputHandler}
+            type="text"
+            placeholder="1990"
+          />
+          <br />
+          <select class="form-control"
             name="tastingNotes"
             value={tastingNotes}
             onChange={this.inputHandler}
@@ -43,16 +58,11 @@ class CreateReview extends Component {
             placeholder="Tasting Notes"
             multiple={true}
           >
-            <option value="ACIDIC">ACIDIC</option>
-            <option value="BARNYARD">BARNYARD</option>
-            <option value="BRIGHT">BRIGHT</option>
-            <option value="BUTTERY">BUTTERY</option>
             <option value="COMPLEX">COMPLEX</option>
-            <option value="CRISP">CRISP</option>
-            <option value="EARTHY">EARTHY</option>
             <option value="OAKED">OAKED</option>
             <option value="JUICY">JUICY</option>
           </select>
+          <br />
         </div>
         <Mutation
           mutation={CREATE_REVIEW}
@@ -62,9 +72,11 @@ class CreateReview extends Component {
             tastingSession,
             score,
             tastingNotes,
+            yearPredict,
+            pricePredict
           }}
         >
-          {postMutation => <button onClick={postMutation}>Submit</button>}
+          {postMutation => <button className="btn btn-outline-primary" onClick={postMutation}>Submit</button>}
         </Mutation>
       </div>
     );

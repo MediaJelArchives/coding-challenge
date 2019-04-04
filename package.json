@@ -1,14 +1,17 @@
 {
-  "name": "coding_challenge",
+  "name": "challenge",
   "version": "0.1.0",
   "private": true,
+  "author": "Nicolas Taboada",
   "dependencies": {
     "apollo-boost": "^0.1.22",
     "graphql": "^14.0.2",
     "react": "^16.6.3",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-router-dom": "^4.3.1",
+    "sweetalert2": "^8.2.6"
   },
   "scripts": {
     "start": "react-scripts start",

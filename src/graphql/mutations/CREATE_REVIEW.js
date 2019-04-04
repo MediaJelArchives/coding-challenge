@@ -6,6 +6,9 @@ const CREATE_REVIEW = gql`
     $tastingSession: ID!
     $score: Int
     $tastingNotes: [TastingNotes!]
+    $yearPredict: String
+    $pricePredict: String
+
   ) {
     createReview(
       data: {
@@ -14,6 +17,8 @@ const CREATE_REVIEW = gql`
         tastingSession: { connect: { id: $tastingSession } }
         score: $score
         tastingNotes: { set: $tastingNotes }
+        yearPredict: $yearPredict
+        pricePredict: $pricePredict
       }
     ) {
       id

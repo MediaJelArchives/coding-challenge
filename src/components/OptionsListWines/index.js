@@ -1,19 +1,18 @@
 import React from "react";
 import { graphql, compose, Query } from "react-apollo";
 
-import ADD_WINE from "../../../graphql/mutations/ADD_WINE";
-import WINES from "../../../graphql/queries/WINES";
+import ADD_WINE from "../../graphql/mutations/ADD_WINE";
+import WINES from "../../graphql/queries/WINES";
 
-const ListWines = props => {
+const OptionsListWines = props => {
   return (
     <Query query={WINES}>
       {({ loading, error, data }) => {
         if (loading) return "LOADING";
         if (error) return `Error! ${error.message}`;
         const { wines } = data;
-
         return (
-          <select
+          <select class="form-control"
             onChange={e => {
               props.childCB
                 ? props.childCB(wines[e.target.options.selectedIndex - 1].id)
@@ -27,13 +26,13 @@ const ListWines = props => {
             <option value="default" disabled hidden>
               {props.placeholder}
             </option>
-            {wines.map((wine, i) => {
+            {wines ? wines.map((wine, i) => {
               return (
                 <option key={`wine${i}`} value={wine.id}>
                   {wine.name}
                 </option>
               );
-            })}
+            }):""}
           </select>
         );
       }}
@@ -41,4 +40,4 @@ const ListWines = props => {
   );
 };
 
-export default compose(graphql(ADD_WINE, { name: "addWine" }))(ListWines);
+export default compose(graphql(ADD_WINE, { name: "addWine" }))(OptionsListWines);

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-
-import CreateTastingSession from "./Form/CreateTastingSession";
+import { Link } from "react-router-dom";
 
 import CREATE_TASTING_SESSION from "../../graphql/mutations/CREATE_TASTING_SESSION";
 import LOCAL_TASTING_SESSION from "../../graphql/queries/LOCAL_TASTING_SESSION";
@@ -35,13 +34,17 @@ class Home extends Component {
             });
           }}
         >
-          {postMutation => (
-            <button onClick={isOpen ? null : postMutation}>
-              Create New Tasting Session
-            </button>
-          )}
-        </Mutation>
-        {isOpen ? <CreateTastingSession toggle={this.toggle} /> : null}
+              {postMutation => (
+              <div className="d-inline-flex p-2 bd-highlight" >
+                <div className="card" style={{width: "18rem"}}>
+                  <img src="/assets/img/descarga.jpeg" className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <Link to="tastingSession" className="btn btn-primary" onClick={isOpen ? null : postMutation} >Start</Link>
+                  </div>
+                </div>                
+            </div>
+              )}
+        </Mutation>        
       </React.Fragment>
     );
   }
